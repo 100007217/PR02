@@ -23,9 +23,11 @@ echo "<form action='vista.php' method='post'>
         <input type='submit' name='filtre' class = 'btn btn-dark btn_filtre' value='Terraza'>
         <input type='submit' name='filtre' class = 'btn btn-dark btn_filtre' value='Comedor'>
     </form>";
-echo "<div></div>";
+    
+echo "<div class='flex-container'>";
 
 foreach ($listaMesas as $mesa) {
+    
     include 'vistacomun.php';
     if ($mesa['incidencia']==1) {
         
@@ -54,6 +56,7 @@ foreach ($listaMesas as $mesa) {
     }
     
 }
+echo "</div";
 
 
 ?>
