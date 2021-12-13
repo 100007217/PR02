@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel Administración</title>
     <link rel="stylesheet" href="../css/crudcss.scss">
 </head>
 <body>
     
-
 
 <?php
 include '../services/config.php';
@@ -25,7 +24,7 @@ $sentencia = $pdo->prepare("SELECT
 $sentencia->execute();
 $listaUsers=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-echo "<a href='https://marca.com'>Generar user</a>";
+echo "<a href='../process/generar_user.php'>Generar user</a>";
 ?>
 
 <div class="container">
@@ -47,7 +46,7 @@ echo "<a href='https://marca.com'>Generar user</a>";
                 echo "<div class='table-data'>{$user['email_user']}</div>";
                 echo "<div class='table-data'>{$user['rol_user']}</div>";
                 echo "<div class='table-data'><a type='button' href='../process/modificar_user.php?id={$user['id_user']}'>Modificar user</a></div>";
-                echo "<div class='table-data'><a type='button' href='../process/eliminar_user.php?id={$user['id_user']}'>Eliminar user</a></div>";
+                echo "<div class='table-data'><a type='button' href='../process/eliminar_user_pdo.php?id={$user['id_user']}' onclick=\"return confirm('¿Estás seguro de eliminar al user?')\">Eliminar user</a></div>";
                 
             echo "</div>";
         }
