@@ -25,6 +25,7 @@ $sentencia->execute();
 $listaUsers=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<a href='../process/generar_user.php'>Generar user</a>";
+echo "<a href='../process/logout.php'>Logout</a>";
 ?>
 
 <div class="container">
