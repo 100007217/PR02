@@ -91,7 +91,7 @@ echo "<a href='../process/logout.php'>Logout</a>";
                         echo "<div class='table-data'>{$mesa['num_sillas_actuales']}</div>";
                         echo "<div class='table-data'>{$mesa['num_silla_dispo']}</div>";
                         echo "<div class='table-data'>{$mesa['id_ubi']}</div>";
-                        
+
                         if ($mesa['reservada']==1) {
                             echo "<div class='table-data'>&#9203;</div>";
                         }else {
@@ -104,8 +104,8 @@ echo "<a href='../process/logout.php'>Logout</a>";
                             echo "<div class='table-data'>&#9989</div>";
                         }
                         echo "<div class='table-data'>{$mesa['desc_incidencia']}</div>";
-                        echo "<div class='table-data'><a type='button' href='../process/modificar_user.php?id={$mesa['id_mesa']}'>Modificar mesa</a></div>";
-                        echo "<div class='table-data'><a type='button' href='../process/eliminar_user_pdo.php?id={$mesa['id_mesa']}' onclick=\"return confirm('¿Estás seguro de eliminar al user?')\">Eliminar mesa</a></div>";
+                        echo "<div class='table-data'><a type='button' href='../process/modificar_mesa.php?id={$mesa['id_mesa']}'>Modificar mesa</a></div>";
+                        echo "<div class='table-data'><a type='button' href='../process/eliminar_mesa_pdo.php?id={$mesa['id_mesa']}' onclick=\"return confirm('¿Estás seguro de eliminar la mesa?')\">Eliminar mesa</a></div>";
                     echo "</div>";
                 }
         echo "</div>";
