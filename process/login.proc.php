@@ -12,8 +12,8 @@ if (isset($_POST['nom_user']) && isset($_POST['password_user'])) {
         if (!$comprobar=="") {
             session_start();
             $_SESSION['nom_user']=$nom_user;
-
-            header("location: ../view/clasificacion.php?rol={$comprobar[0]['rol_user']}");
+            $_SESSION['rol']=$comprobar[0]['rol_user'];
+            header("location: ../view/clasificacion.php");
         }else {
             session_start();
             $_SESSION['error']=1;
