@@ -5,6 +5,10 @@ echo "<table class='column'>";
         echo "</tr>";
         
         echo "<tr>";
+        echo "<td><img src='../img/{$mesa['img_mesa']}' width='150px'></td>";
+        echo "</tr>";
+
+        echo "<tr>";
         echo "<td><p>{$mesa['tipo_ubi']}</p></td>";
         echo "</tr>";
 

@@ -4,16 +4,16 @@
     include '../services/conexion.php';
 
     $sentencia = $pdo->prepare("SELECT 
-        tbl_users.num_silla_dispo,
-        tbl_users.reservada,
-        tbl_users.id_ubi,
-        tbl_users.incidencia,
-        tbl_users.desc_incidencia,
-        tbl_users.num_sillas_actuales
-        from tbl_users where id_user=?");
+        tbl_mesa.num_silla_dispo,
+        tbl_mesa.reservada,
+        tbl_mesa.id_ubi,
+        tbl_mesa.incidencia,
+        tbl_mesa.desc_incidencia,
+        tbl_mesa.num_sillas_actuales
+        from tbl_mesa where id_mesa=?");
     $sentencia->bindParam(1, $_GET['id']);
     $sentencia->execute();
-    $listaUsers=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+    $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
     }else{
         header("location: ../view/login.php");
     }
@@ -37,10 +37,10 @@
         <div class=alert id='mensaje'></div>
         <center>
             <p>Numero sillas</p>
-            <input type="number" name="numero_sillas" >
+            <input type="number" name="numero_sillas" value="<?php echo $listaMesas[0]['num_silla_dispo']?>">
             <br>
             <p>Sala</p>
-            <input type="number" name="id_sala" min='1' max='2'>
+            <input type="number" name="id_sala" min='1' max='2' value="<?php echo $listaMesas[0]['id_ubi']?>">
             <br>
             <br>
             <input type="hidden" name="id_mesa" value="<?php echo $_GET['id']?>">

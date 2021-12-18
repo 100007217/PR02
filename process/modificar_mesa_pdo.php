@@ -27,7 +27,7 @@ include '../services/conexion.php';
         
         $modificar_mesa->execute();
 
-       //header("location: ../view/crud.php");
+       header("location: ../view/crud.php");
     } catch (\Throwable $th) {
         //throw $th;
     }

@@ -17,13 +17,15 @@ include '../services/ver.php';
 
 echo "<a href='../process/logout.php' class='logout'>Logout</a>";
 echo "<h1>Reservas del restaurante</h1>";
+echo "<center>";
 echo "<a type='button' class='btn btn-dark btn_filtro' href='../process/filtro.php' class='filtro'>Filtro</a>";
+echo "<a type='button' class='btn btn-success btn_filtro' href='../process/generar_futura_reserva.php' class='filtro'>Generar reserva futura</a>";
 echo "<form action='vista.php' method='post'>
         <input type='submit' name='filtre' class = 'btn btn-dark btn_filtre' value='Todo'>
         <input type='submit' name='filtre' class = 'btn btn-dark btn_filtre' value='Terraza'>
         <input type='submit' name='filtre' class = 'btn btn-dark btn_filtre' value='Comedor'>
     </form>";
-    
+echo "</center>";
 echo "<div class='flex-container'>";
 
 foreach ($listaMesas as $mesa) {

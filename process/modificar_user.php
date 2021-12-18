@@ -34,6 +34,7 @@
 <form action="modificar_user_pdo.php" method="post" class="caja" onsubmit="return validar()">
         <h2>Modificar user</h2>
         <div class=alert id='mensaje'></div>
+        <center>
         <p>Nombre user</p>
         <input type="text" name="nombre_user" value="<?php echo $listaUsers[0]['nom_user']?>">
         <br>
@@ -57,6 +58,7 @@
         <input type="hidden" name="id_user" value="<?php echo $_GET['id']?>">
         <br>
         <input type="submit" value="Modificar usuario" class="btn btn-dark">
+        </center>
 </form>
 </body>
 </html>

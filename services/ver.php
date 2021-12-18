@@ -37,6 +37,7 @@ tbl_mesa.num_sillas_actuales,
 tbl_ubicacion.tipo_ubi,
 tbl_mesa.incidencia,
 tbl_mesa.desc_incidencia,
+tbl_mesa.img_mesa,
 tbl_mesa.id_ubi
 from tbl_mesa 
 left outer join tbl_reserva on tbl_mesa.id_mesa=tbl_reserva.id_mesa 
