@@ -26,8 +26,9 @@ body {
     box-shadow: 2px 2px 10px #666;
 }
 
-.caja input[name='num_personas_reserva'],
-.caja input[name='nombre_cliente'] {
+.caja input[id='num_personas_reserva'],
+.caja input[id='id_mesa'],
+.caja input[id='nombre_cliente'] {
     width: 100%;
     line-height: 2.5em;
     font-family: 'Zen Antique', serif;
