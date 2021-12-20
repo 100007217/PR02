@@ -14,6 +14,7 @@
 
 <?php
 include '../services/ver.php';
+include '../process/checker.php';
 
 echo "<a href='../process/logout.php' class='logout'>Logout</a>";
 echo "<h1>Reservas del restaurante</h1>";
