@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 if (isset($_POST['nom_user']) && isset($_POST['password_user'])) {
     require_once '../services/conexion.php';
     $nom_user=$_POST['nom_user'];
@@ -10,12 +10,10 @@ if (isset($_POST['nom_user']) && isset($_POST['password_user'])) {
    
     try {
         if (!$comprobar=="") {
-            session_start();
             $_SESSION['nom_user']=$nom_user;
             $_SESSION['rol']=$comprobar[0]['rol_user'];
             header("location: ../view/clasificacion.php");
         }else {
-            session_start();
             $_SESSION['error']=1;
             header("location: ../view/login.php");
             

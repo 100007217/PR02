@@ -16,7 +16,7 @@
 include '../services/config.php';
 include '../services/conexion.php';
 
-        $hora_final= $_POST['hora_inicio_reserva']+2;
+        $hora_final= $_POST['hora_inicio_reserva']+1;
         $fecha_inicio = $_POST['fecha_inicio_reserva']." ".$_POST['hora_inicio_reserva'].":00:00";
         $npersonas = $_POST['num_personas_reserva'];
         $fecha_final = $_POST['fecha_inicio_reserva']." ".$hora_final.":00:00";
