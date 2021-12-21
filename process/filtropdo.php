@@ -22,7 +22,8 @@ include '../services/conexion.php';
 include '../services/reserva.php';
 
 $enviar = $_POST['enviar'];
-
+$fecha_actual=date("Y-m-d H:i:s", time());
+echo "<div class='flex-container'>";
 
 if ($enviar === "Filtrar Mesa"){
     $id_mesa = $_POST['id_mesa'];
@@ -37,7 +38,7 @@ if ($enviar === "Filtrar Mesa"){
      $filtro_mesa->execute();
  
      $listaReservasporMesa=$filtro_mesa->fetchAll(PDO::FETCH_ASSOC);
- 
+    
      foreach ($listaReservasporMesa as $reserva) {
          echo "<table>";
          echo "<tr>";
@@ -55,6 +56,17 @@ if ($enviar === "Filtrar Mesa"){
          echo "<tr>";
              echo "<td>Numero personas -> {$reserva['num_personas']}</td>";
          echo "</tr>";
+
+         echo "<tr>";
+            echo "<td><a type='button' class='btn btn-danger'  href='eliminar_reserva.php?id={$reserva['id_reserva']}'  onclick=\"return confirm('¿Estás seguro de eliminar la reserva?')\">Eliminar reserva</a></td>";
+        echo "</tr>";
+        if ($reserva['fecha_final']>$fecha_actual) {
+            echo "<tr>";
+            echo "<td><a type='button' class='btn btn-warning'  href='modificar_reserva.php?id={$reserva['id_reserva']}'  >Modificar reserva</a></td>";
+        echo "</tr>";
+        }
+        
+
      echo "</table>";
  }
 }else{
@@ -91,6 +103,17 @@ if ($enviar === "Filtrar Mesa"){
         echo "<tr>";
             echo "<td>Final Reserva -> {$ubicacion['fecha_final']}</td>";
         echo "</tr>";
+
+        echo "<tr>";
+            echo "<td><a type='button' class='btn btn-danger'  href='eliminar_reserva.php?id={$ubicacion['id_reserva']}'  onclick=\"return confirm('¿Estás seguro de eliminar la reserva?')\">Eliminar reserva</a></td>";
+        echo "</tr>";
+
+        if ($ubicacion['fecha_final']>$fecha_actual) {
+            echo "<tr>";
+            echo "<td><a type='button' class='btn btn-warning'  href='modificar_reserva.php?id={$ubicacion['id_reserva']}'  >Modificar reserva</a></td>";
+        echo "</tr>";
+        }
+
     echo "</table>";
     }
 }
